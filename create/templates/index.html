@@ -4,11 +4,136 @@
 {% block description %}Data visualizations for academic copyright studies.{% endblock %}
 
 {% block content %}
-<h1>Hello, CREATe</h1>
+
+<div class="ui large attached stackable menu">
+    <div class="ui container">
+        <a href="/" class="header item">CREATe</a>
+        <a href="#" class="blue item">about</a>
+        <div class="right menu">
+            <div class="item">
+                <div class="ui icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui container" style="margin-top: 50px">
+    <div class="ui stackable three column grid">
+        <div class="column">
+            <div class="ui card">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='img/cloud.png') }}">
+                </div>
+                <div class="content">
+                    <a class="header">Heading</a>
+                    <div class="meta">
+                        <span class="date">This is metadata.</span>
+                    </div>
+                    <div class="description">
+                        This is a description.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="ui card">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='img/trulia.png') }}">
+                </div>
+                <div class="content">
+                    <a class="header">Heading</a>
+                    <div class="meta">
+                        <span class="date">This is metadata.</span>
+                    </div>
+                    <div class="description">
+                        This is a description.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="ui card">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='img/chord.png') }}">
+                </div>
+                <div class="content">
+                    <a class="header">Heading</a>
+                    <div class="meta">
+                        <span class="date">This is metadata.</span>
+                    </div>
+                    <div class="description">
+                        This is a description.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="ui stackable three column grid">
+        <div class="column">
+            <div class="ui card">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='img/veroni.png') }}">
+                </div>
+                <div class="content">
+                    <a class="header">Heading</a>
+                    <div class="meta">
+                        <span class="date">This is metadata.</span>
+                    </div>
+                    <div class="description">
+                        This is a description.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="ui card">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='img/bundling.png') }}">
+                </div>
+                <div class="content">
+                    <a class="header">Heading</a>
+                    <div class="meta">
+                        <span class="date">This is metadata.</span>
+                    </div>
+                    <div class="description">
+                        This is a description.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="ui card">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='img/bubble.png') }}">
+                </div>
+                <div class="content">
+                    <a class="header">Heading</a>
+                    <div class="meta">
+                        <span class="date">This is metadata.</span>
+                    </div>
+                    <div class="description">
+                        This is a description.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
 {% endblock %}
 
 {% block js %}        
-        <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
-        <script>window.jQuery || document.write("<script src=\"{{ url_for('static', filename='js/jquery-2.2.3.min.js') }}\"><\/script>")</script>
-        <script src="{{ url_for('static', filename='js/create.js') }}"></script>
+<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>window.jQuery || document.write("<script src=\"{{ url_for('static', filename='js/jquery-2.2.3.min.js') }}\"><\/script>")</script>
+<script src="{{ url_for('static', filename='js/semantic.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/create.js') }}"></script>
 {% endblock %}
