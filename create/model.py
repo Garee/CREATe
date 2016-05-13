@@ -1,4 +1,5 @@
 import requests
+import json
 
 model = []
 
@@ -13,16 +14,8 @@ def query(request):
         req.update(lastContinue)
         # Call API
         result = requests.get('http://www.copyrightevidence.org/evidence-wiki/api.php', params=req).json()
-
-        if 'error' in result:
-            raise Error(result['error'])
-        if 'warnings' in result:
-            print(result['warnings'])
-        if 'query' in result:
-            yield result['query']
-        if 'continue' not in result:
-            break
-        lastContinue = result['continue']
+        result = json.dumps(result)
+        yield result
 
 # Converts a page model into our internal model
 def makePageModel(pageJson):
@@ -32,4 +25,5 @@ if __name__ == '__main__':
     print("[")
     for result in query({'generator': 'allpages', 'formatversion': '2', 'prop': 'revisions', 'rvprop':'content'}):
         print(result)
+        print(",")
     print("]")
