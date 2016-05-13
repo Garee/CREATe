@@ -13,7 +13,7 @@ http://www.copyrightevidence.org/evidence-wiki/api.php
 $ sudo apt-get install python3 pip3
 $ git clone https://github.com/Garee/CREATe.git create
 $ cd create
-$ pip install -r requirements.txt
+$ pip3 install -r requirements.txt
 $ export CREATE_CFG=/absolute/path/to/cfg/development.cfg
 $ python3 create/server.py
 ```
