@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}CREATe{% endblock %}
+{% block description %}Data visualizations for academic copyright studies.{% endblock %}
+
+{% block content %}
+<h1>Hello, CREATe</h1>
+{% endblock %}
+
+{% block js %}        
+        <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+        <script>window.jQuery || document.write("<script src=\"{{ url_for('static', filename='js/jquery-2.2.3.min.js') }}\"><\/script>")</script>
+        <script src="{{ url_for('static', filename='js/create.js') }}"></script>
+{% endblock %}
