@@ -20,7 +20,10 @@ page p
 # keys = {0: 'page_id', 1: 'page_title', 2: 'revison_id', 3:}
 
 def buildModel():
+    pageModels = []
+
     for row in data:
+
         pageTitle = row[1]
         old = row[4]
 
@@ -37,12 +40,16 @@ def buildModel():
 
                 attributes.append({'key' : key, 'value': value})
 
-        print(attributes)
+        pageModel = {
+            'title' : pageTitle,
+            'text' : old,
+            'attributes': attributes
+        }
 
-        
+        pageModels.append(pageModel)
 
+    return pageModels
 
+pageModels = buildModel()
 
-
-
-buildModel()
+print(pageModels)
