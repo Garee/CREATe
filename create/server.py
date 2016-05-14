@@ -2,8 +2,6 @@
 
 from flask import Flask, render_template, jsonify, request
 
-import json
-
 app = Flask(__name__)
 app.config.from_envvar('CREATE_CFG')
 
