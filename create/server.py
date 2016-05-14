@@ -13,12 +13,16 @@ def pages():
         pages = json.load(data_file)
 
         key = request.args.get('key')
+        limit = int(request.args.get('limit'))
 
         results = []
+        count = 0
 
-        if (key):
+        if key:
 
             for page in pages:
+                if limit == count:
+                    break
                 attrs = page['attributes']
                 print(attrs)
 
@@ -31,9 +35,13 @@ def pages():
                         }
 
                         results.append(result)
-                        break;
+                        count += 1
+                        break
         else:
-            results = pages
+            while count <= limit:
+                results.append(pages[count])
+                count += 1
+
 
         return jsonify({
             "results": results
