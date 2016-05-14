@@ -1,4 +1,5 @@
 import sqlite3
+import json
 
 conn = sqlite3.connect('database.sqlite')
 c = conn.cursor()
@@ -19,13 +20,39 @@ page p
 
 # keys = {0: 'page_id', 1: 'page_title', 2: 'revison_id', 3:}
 
-for row in data:
-    pageTitle = row[1]
-    old = row[4]
+def buildModel():
+    pageModels = []
 
-    lines = old.split("\n")
+    for row in data:
 
-    attributes = []
-    for line in lines:
-        if "=" in line and line.startswith('|'):
-            print line
+        pageId = row[0]
+        pageTitle = row[1]
+        old = row[4]
+
+        lines = old.split("\n")
+
+        attributes = []
+        for line in lines:
+            if "=" in line and line.startswith('|'):
+                keyValStr = line.replace("|","")
+                #print (keyValStr)
+                keyVal = keyValStr.split("=")
+                key = keyVal[0]
+                value = keyVal[1]
+
+                attributes.append({'key' : key, 'value': value})
+
+        pageModel = {
+            'pageId' : pageId,
+            'title' : pageTitle,
+            'text' : old,
+            'attributes': attributes
+        }
+
+        pageModels.append(pageModel)
+
+    return pageModels
+
+pageModels = buildModel()
+
+print(json.dumps(pageModels))
