@@ -53,6 +53,25 @@ def cloud():
 def about():
     return render_template('about.html')
 
+@app.route('/pages/keys')
+def keys():
+
+    with open('all_data.txt') as data_file:
+        pages = json.load(data_file)
+
+        attributes = []
+        for page in pages:
+            attrs = page['attributes']
+
+            for attr in attrs:
+                print (attr['key'])
+                attributes.append(attr['key'])
+
+        uniqueAttributes = list(set(attributes))
+
+        print(uniqueAttributes)
+
+        return jsonify({'attributes': uniqueAttributes})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=app.config['PORT'])
