@@ -35,8 +35,8 @@ def pages():
                         }
 
                         results.append(result)
+                        count += 1
                         break
-                    count += 1
         else:
             while count <= limit:
                 results.append(pages[count])
