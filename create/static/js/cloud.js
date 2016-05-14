@@ -1,14 +1,47 @@
 $(document).ready(function() {
+    $("#vis-container").transition("fly up");
+    
     var words = [
-        {word: "one", freq: 3425},
-        {word: "two", freq: 500},
-        {word: "three", freq: 475},
-        {word: "four", freq: 3255},
-        {word: "five", freq: 439},
-        {word: "six", freq: 343},
-        {word: "seven", freq: 325},
-        {word: "eight", freq: 36353},
-        {word: "nine", freq: 3525}
+        "copyright",
+        "piracy",
+        "music",
+        "digital",
+        "software",
+        "study",
+        "use",
+        "sharing",
+        "rights",
+        "file",
+        "law",
+        "paper",
+        "between",
+        "intellectual",
+        "property",
+        "model",
+        "economic",
+        "consumers",
+        "industry",
+        "results",
+        "legal",
+        "analysis",
+        "research",
+        "but",
+        "works",
+        "social",
+        "online",
+        "sales",
+        "behavior",
+        "internet",
+        "whether",
+        "protection",
+        "been",
+        "policy",
+        "article",
+        "downloading",
+        "market",
+        "other",
+        "about",
+        "impact"
     ];
     
     var fill = d3.scale.category20();
@@ -16,7 +49,7 @@ $(document).ready(function() {
     var layout = d3.layout.cloud()
         .size([800, 500])
         .words(words.map(function(d, i) {
-            return {text: d.word, size: 50 + (i * 10)};
+            return {text: d, size: (70 - i)};
         }))
         .padding(5)
         .rotate(function() { return ~~(Math.random() * 2) * 90; })
