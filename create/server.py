@@ -14,26 +14,21 @@ def pages():
 
         key = request.args.get('key')
 
-        print("test")
-        print(key)
-
         results = []
         for page in pages:
             attrs = page['attributes']
-            print(attrs)
 
             for attr in attrs:
                 if attr['key'] == key:
                     result = {
                         'title' : page['title'],
                         'pageId' : page['pageId'],
-                        'value': attr['value']
+                        key: attr['value']
                     }
-
                     results.append(result)
-                    break;
-
-        return json.dumps(results)
+        return jsonify({
+            "results": results
+        })
 
 @app.route('/')
 def index():
