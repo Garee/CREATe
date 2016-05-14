@@ -35,9 +35,17 @@ def buildModel():
         for line in lines:
             if "=" in line and line.startswith('|'):
                 keyValStr = line.replace("|","")
+
                 #print (keyValStr)
                 keyVal = keyValStr.split("=")
                 key = keyVal[0]
+
+                key = key.replace("?","")
+
+                if '{' in key:
+                    continue
+
+
                 value = keyVal[1]
 
                 attributes.append({'key' : key, 'value': value})
@@ -49,7 +57,8 @@ def buildModel():
             'attributes': attributes
         }
 
-        pageModels.append(pageModel)
+        if attributes:
+            pageModels.append(pageModel)
 
     return pageModels
 
