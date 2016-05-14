@@ -1,12 +1,39 @@
 #!/usr/bin/env python
 
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 
-import structure-table
+import json
 
 app = Flask(__name__)
 app.config.from_envvar('CREATE_CFG')
 
+@app.route('/pages')
+def pages():
+    with open('all_data.txt') as data_file:
+        pages = json.load(data_file)
+
+        key = request.args.get('key')
+
+        print("test")
+        print(key)
+
+        results = []
+        for page in pages:
+            attrs = page['attributes']
+            print(attrs)
+
+            for attr in attrs:
+                if attr['key'] == key:
+                    result = {
+                        'title' : page['title'],
+                        'pageId' : page['pageId'],
+                        'value': attr['value']
+                    }
+
+                    results.append(result)
+                    break;
+
+        return json.dumps(results)
 
 @app.route('/')
 def index():
