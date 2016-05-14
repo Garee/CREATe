@@ -3,5 +3,6 @@ body {
 }
 
 .ui .card {
+    display: none;
     margin: 0 auto;
 }
