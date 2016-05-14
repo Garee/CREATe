@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Word Cloud | CREATe{% endblock %}
+{% block description %}Data visualizations for academic copyright studies.{% endblock %}
+
+{% block content %}
+<div class="ui large attached stackable menu">
+    <div class="ui container">
+        <a href="/" class="header item">
+            <div class="image">
+                <img src="{{ url_for('static', filename='img/logo.jpg') }}" width="100px" height="30px">
+            </div>
+        </a>
+        <a href="http://www.copyrightevidence.org/evidence-wiki/index.php" class="item"><i class="book icon"></i>wiki</a>
+        <a href="/about" class="item"><i class="info circle icon"></i>about</a>
+        <a href="https://www.github.com/Garee/CREATe" class="item"><i class="info github icon"></i>source</a>        
+        <div class="right menu">
+            <div class="item">
+                <div class="ui icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                </div>
+            </div>
+            <div class="item"></div>
+        </div>
+    </div>
+</div>
+
+<div class="ui container" style="margin-top: 30px">
+    <div class="ui centered grid">
+        <div class="twelve wide column">
+            <div class="ui blue raised segment">
+                <div id="vis"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}        
+<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>window.jQuery || document.write("<script src=\"{{ url_for('static', filename='js/jquery-2.2.3.min.js') }}\"><\/script>")</script>
+<script src="{{ url_for('static', filename='js/semantic.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+<script src="{{ url_for('static', filename='js/d3.layout.cloud.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cloud.js') }}"></script>
+{% endblock %}

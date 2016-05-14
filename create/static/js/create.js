@@ -1,3 +1,7 @@
 $(document).ready(function() {
-   // Do stuff. 
+    $('.card').transition({
+        animation : 'tada',
+        duration  : 800,
+        interval  : 200
+    });
 });
