@@ -20,12 +20,12 @@ page p
 # keys = {0: 'page_id', 1: 'page_title', 2: 'revison_id', 3:}
 
 for row in data:
-    print(row[4])
-    #pageTitle = row[1]
-    #old = row[4]
+    pageTitle = row[1]
+    old = row[4]
 
-    #lines = old.split("\n")
+    lines = old.split("\n")
 
-    #for line in lines:
-    #    if "=" in line and line.count('=') > 1:
-    #        print (line)
+    attributes = []
+    for line in lines:
+        if "=" in line and line.startswith('|'):
+            print line
