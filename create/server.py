@@ -15,17 +15,26 @@ def pages():
         key = request.args.get('key')
 
         results = []
-        for page in pages:
-            attrs = page['attributes']
 
-            for attr in attrs:
-                if attr['key'] == key:
-                    result = {
-                        'title' : page['title'],
-                        'pageId' : page['pageId'],
-                        key: attr['value']
-                    }
-                    results.append(result)
+        if (key):
+
+            for page in pages:
+                attrs = page['attributes']
+                print(attrs)
+
+                for attr in attrs:
+                    if attr['key'] == key:
+                        result = {
+                            'title' : page['title'],
+                            'pageId' : page['pageId'],
+                            'value': attr['value']
+                        }
+
+                        results.append(result)
+                        break;
+        else:
+            results = pages
+
         return jsonify({
             "results": results
         })
