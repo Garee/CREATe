@@ -7,8 +7,14 @@
 
 <div class="ui large attached stackable menu">
     <div class="ui container">
-        <a href="/" class="header item">CREATe</a>
-        <a href="#" class="blue item">about</a>
+        <a href="/" class="header item">
+            <div class="image">
+                <img src="{{ url_for('static', filename='img/logo.jpg') }}" width="100px" height="30px">
+            </div>
+        </a>
+        <a href="http://www.copyrightevidence.org/evidence-wiki/index.php" class="item"><i class="book icon"></i>wiki</a>
+        <a href="/about" class="item"><i class="info circle icon"></i>about</a>
+        <a href="https://www.github.com/Garee/CREATe" class="item"><i class="info github icon"></i>source</a>        
         <div class="right menu">
             <div class="item">
                 <div class="ui icon input">
@@ -16,14 +22,15 @@
                     <i class="search icon"></i>
                 </div>
             </div>
+            <div class="item"></div>
         </div>
     </div>
 </div>
 
-<div class="ui container" style="margin-top: 50px">
+<div class="ui container" style="margin-top: 30px">
     <div class="ui stackable three column grid">
         <div class="column">
-            <div class="ui card">
+            <div class="ui blue card">
                 <div class="image">
                     <img src="{{ url_for('static', filename='img/cloud.png') }}">
                 </div>
@@ -40,7 +47,7 @@
         </div>
 
         <div class="column">
-            <div class="ui card">
+            <div class="ui red card">
                 <div class="image">
                     <img src="{{ url_for('static', filename='img/trulia.png') }}">
                 </div>
@@ -57,7 +64,7 @@
         </div>
 
         <div class="column">
-            <div class="ui card">
+            <div class="ui green card">
                 <div class="image">
                     <img src="{{ url_for('static', filename='img/chord.png') }}">
                 </div>
@@ -77,7 +84,7 @@
 
     <div class="ui stackable three column grid">
         <div class="column">
-            <div class="ui card">
+            <div class="ui violet card">
                 <div class="image">
                     <img src="{{ url_for('static', filename='img/veroni.png') }}">
                 </div>
@@ -94,7 +101,7 @@
         </div>
 
         <div class="column">
-            <div class="ui card">
+            <div class="ui teal card">
                 <div class="image">
                     <img src="{{ url_for('static', filename='img/bundling.png') }}">
                 </div>
@@ -111,7 +118,7 @@
         </div>
 
         <div class="column">
-            <div class="ui card">
+            <div class="ui orange card">
                 <div class="image">
                     <img src="{{ url_for('static', filename='img/bubble.png') }}">
                 </div>
@@ -126,7 +133,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
 {% endblock %}
