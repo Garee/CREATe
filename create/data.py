@@ -42,7 +42,10 @@ def buildModel():
 
                 key = key.replace("?","")
 
-                if '{' in key:
+                if not key or '{' in key:
+                    continue
+
+                if not key or key[0].islower() or not key[0].isalpha():
                     continue
 
 

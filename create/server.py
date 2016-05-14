@@ -9,7 +9,7 @@ app.config.from_envvar('CREATE_CFG')
 
 @app.route('/pages')
 def pages():
-    with open('all_data.txt') as data_file:
+    with open('new_all_data.txt') as data_file:
         pages = json.load(data_file)
 
         key = request.args.get('key')
@@ -64,7 +64,7 @@ def about():
 @app.route('/pages/keys')
 def keys():
 
-    with open('all_data.txt') as data_file:
+    with open('new_all_data.txt') as data_file:
         pages = json.load(data_file)
 
         attributes = []
