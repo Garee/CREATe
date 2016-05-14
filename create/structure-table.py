@@ -12,7 +12,7 @@ t.old_text
 FROM
 page p
     INNER JOIN revision r
-        ON p.page_id = r.rev_page    
+        ON p.page_id = r.rev_page
     INNER JOIN text t
         ON r.rev_text_id = t.old_id'''
 )
@@ -20,7 +20,12 @@ page p
 # keys = {0: 'page_id', 1: 'page_title', 2: 'revison_id', 3:}
 
 for row in data:
-    print(row[1])
     print(row[4])
+    #pageTitle = row[1]
+    #old = row[4]
 
+    #lines = old.split("\n")
 
+    #for line in lines:
+    #    if "=" in line and line.count('=') > 1:
+    #        print (line)
