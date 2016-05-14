@@ -25,7 +25,7 @@ Navigate to http://localhost:3000.
 ```sql
 SELECT
     `p`.`page_id` AS "page_id",
-    CAST(`p`.`page_title` AS CHAR(10000) CHARACTER SET utf8) AS "page_title",
+    `p.page_title`,
     `r`.`rev_text_id` AS "revision_id",
     `t`.`old_id` AS "text_id",
     `t`.`old_text`
