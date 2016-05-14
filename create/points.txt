@@ -1,0 +1,12 @@
+- A web application that serves copyright study data visualizations.
+
+- Speeding up the accessability of data.
+  - Time = Money therefore reduces staff costs.
+
+- Increases the likelihood that the layman will understand.
+
+- Increases the likelihood that the data is even looked at.
+
+- A platform that can be built upon - improved with more visualizations.
+
+- Use the power of open source to encourage contributions.
