@@ -36,7 +36,7 @@ def buildModel():
             if "=" in line and line.startswith('|'):
                 keyValStr = line.replace("|","")
                 #print (keyValStr)
-                keyVal = line.split("=")
+                keyVal = keyValStr.split("=")
                 key = keyVal[0]
                 value = keyVal[1]
 
