@@ -1,4 +1,5 @@
 import sqlite3
+import json
 
 conn = sqlite3.connect('database.sqlite')
 c = conn.cursor()
@@ -24,6 +25,7 @@ def buildModel():
 
     for row in data:
 
+        pageId = row[0]
         pageTitle = row[1]
         old = row[4]
 
@@ -41,6 +43,7 @@ def buildModel():
                 attributes.append({'key' : key, 'value': value})
 
         pageModel = {
+            'pageId' : pageId,
             'title' : pageTitle,
             'text' : old,
             'attributes': attributes
@@ -52,4 +55,4 @@ def buildModel():
 
 pageModels = buildModel()
 
-print(pageModels)
+print(json.dumps(pageModels))
