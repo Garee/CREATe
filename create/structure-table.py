@@ -1,5 +1,8 @@
 import sqlite3
+
 conn = sqlite3.connect('database.sqlite')
+c = conn.cursor()
+conn.row_factory = sqlite3.Row
 
 data = conn.execute('''SELECT p.page_id AS "page_id",
 p.page_title,
@@ -14,6 +17,10 @@ page p
         ON r.rev_text_id = t.old_id'''
 )
 
-print(data)
+# keys = {0: 'page_id', 1: 'page_title', 2: 'revison_id', 3:}
+
+for row in data:
+    print(row[1])
+    print(row[4])
 
 
