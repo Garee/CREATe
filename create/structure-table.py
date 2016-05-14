@@ -19,13 +19,30 @@ page p
 
 # keys = {0: 'page_id', 1: 'page_title', 2: 'revison_id', 3:}
 
-for row in data:
-    pageTitle = row[1]
-    old = row[4]
+def buildModel():
+    for row in data:
+        pageTitle = row[1]
+        old = row[4]
 
-    lines = old.split("\n")
+        lines = old.split("\n")
 
-    attributes = []
-    for line in lines:
-        if "=" in line and line.startswith('|'):
-            print line
+        attributes = []
+        for line in lines:
+            if "=" in line and line.startswith('|'):
+                keyValStr = line.replace("|","")
+                #print (keyValStr)
+                keyVal = line.split("=")
+                key = keyVal[0]
+                value = keyVal[1]
+
+                attributes.append({'key' : key, 'value': value})
+
+        print(attributes)
+
+        
+
+
+
+
+
+buildModel()
