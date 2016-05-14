@@ -2,8 +2,6 @@
 
 from flask import Flask, render_template, jsonify
 
-import structure-table
-
 app = Flask(__name__)
 app.config.from_envvar('CREATE_CFG')
 
