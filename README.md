@@ -1,6 +1,8 @@
 # CREATe
 A prototype data visualisation platform for academic copyright studies.
 
+This was our solution to the [CREATe Hackathon](http://www.create.ac.uk/hacks/).
+
 ![CREATe](https://googledrive.com/host/0B6xpBIlxAFeqOXBYdVpXemlKSTA/create_screenshot.png)
 
 ## Quick Start
