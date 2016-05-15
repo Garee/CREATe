@@ -32,7 +32,6 @@ def pages():
                 if limit == count:
                     break
                 attrs = page['attributes']
-                print(attrs)
 
                 for attr in attrs:
                     if attr['key'] == key:
@@ -71,7 +70,6 @@ def about():
 
 @app.route('/pages/keys')
 def keys():
-
     with open('new_all_data.txt') as data_file:
         pages = json.load(data_file)
 
@@ -80,13 +78,8 @@ def keys():
             attrs = page['attributes']
 
             for attr in attrs:
-                print (attr['key'])
                 attributes.append(attr['key'])
-
         uniqueAttributes = list(set(attributes))
-
-        print(uniqueAttributes)
-
         return jsonify({'attributes': uniqueAttributes})
 
 if __name__ == '__main__':
